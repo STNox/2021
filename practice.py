@@ -1,5 +1,8 @@
-print('Pyinstaller 테스트')
+import math
 
-question = 'orange'
-question = question.replace(question[0], 'a')
-print(question)
+rad_angle = math.radians(0)
+print(rad_angle)
+rad_angle = math.radians(90)
+print(rad_angle)
+rad_angle = math.radians(180)
+print(rad_angle)
