@@ -50,13 +50,25 @@
 # avg_score = sum(fake_scores) / n
 # print(avg_score)
 
-t = int(input())
-for _ in range(t):
-    oxes = input()
-    oes = oxes.split('X')
-    while '' in oes:
-        oes.remove('')
-    points = 0
-    for o in oes:
-        points += len(o) * (len(o) + 1) / 2
-    print(int(points))
+# t = int(input())
+# for _ in range(t):
+#     oxes = input()
+#     oes = oxes.split('X')
+#     while '' in oes:
+#         oes.remove('')
+#     points = 0
+#     for o in oes:
+#         points += len(o) * (len(o) + 1) / 2
+#     print(int(points))
+
+c = int(input())
+for _ in range(c):
+    scores = list(map(int, input().split()))
+    std_count = scores[0]
+    avg_score = (sum(scores) - std_count) / std_count
+    pass_member = []
+    for i in range(1, std_count + 1):
+        if scores[i] > avg_score:
+            pass_member.append(scores[i])
+    pass_perc = '{:.3f}%'.format(len(pass_member) / std_count * 100)
+    print(pass_perc)
